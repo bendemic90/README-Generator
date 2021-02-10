@@ -10,12 +10,12 @@ const promptUser = () => {
     {
       type: 'input',
       name: 'name',
-      message: 'What is your name?',
+      message: 'What is the name of your repository/app?',
     },
     {
       type: 'input',
       name: 'location',
-      message: 'Where are you from?',
+      message: 'Where are you from?', 
     },
     {
       type: 'input',
@@ -40,15 +40,14 @@ const promptUser = () => {
   ]);
 };
 
-const generateHTML = (answers) =>
-  `
-  # ${answers.name}
+const generateReadme = (answers) =>
+  `# ${answers.name}
   `;
 
 // Bonus using writeFileAsync as a promise
 const init = () => {
   promptUser()
-    .then((answers) => writeFileAsync('READ_ME.md', generateHTML(answers)))
+    .then((answers) => writeFileAsync('READ_ME.md', generateReadme(answers)))
     .then(() => console.log('Successfully wrote to READ_ME.md'))
     .catch((err) => console.error(err));
 };
