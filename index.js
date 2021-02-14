@@ -16,7 +16,7 @@ const promptUser = () => {
       type: 'list',
       name: 'license',
       message: 'What license do you use?', 
-      choices: ['MIT', 'GNU-GPLv3', 'Apache', 'Personal/Proprietary']
+      choices: ['MIT', 'GNU-GPLv3', 'Apache', 'ISC']
     },
     {
       type: 'input',
@@ -27,6 +27,11 @@ const promptUser = () => {
       type: 'input',
       name: 'usage',
       message: 'What is your app used for?',
+    },
+    {
+      type: 'input',
+      name: 'description',
+      message: 'Describe how your application works.',
     },
     {
       type: 'input',
@@ -43,6 +48,11 @@ const promptUser = () => {
       name: 'linkedin',
       message: 'Enter your LinkedIn URL.',
     },
+    {
+      type: 'input',
+      name: 'test',
+      message: 'How does one test your application?',
+    },
   ]);
 };
 
@@ -50,15 +60,18 @@ const generateReadme = (answers) =>
   ` 
   # ${answers.name}
 
-  ### License: ![License](https://img.shields.io/static/v1?label=${answers.license}&message=License)
-
   ## Table of Contents:
   1. [Description](###description)
   2. [Usage](###usage)
   3. [Installation](###installation)
+  4. [Questions](###questions)
+  5. [Tests](###tests)
+  6. [Contributing](###contributing)
+
+  ### License: ![License](https://img.shields.io/static/v1?label=${answers.license}&message=License)
 
   ### Description
-  ${answers.usage}
+  > ${answers.description}
 
   ### Usage 
   ${answers.usage}
@@ -66,9 +79,17 @@ const generateReadme = (answers) =>
   ### Installation
   ${answers.installation}
 
-  ### Contact/FAQ
-  Please contact me at ${answers.email} if you have any questions regarding the application!
-  Further professional contact at ${answers.linkedin}.
+  ### Questions
+  - Please contact me at ${answers.email} if you have any questions regarding the application!
+  - Further professional contact at my LinkedIN: [Linked](https://www.linkedin.com/in/${answers.linkedin}/)
+  - Github: [Git](github.com/${answers.github}/)
+
+  ### Tests
+  ${answers.test}
+
+  ### Contributing
+  If you wish to contribute to this application please send a request to me at: ${answers.email}.
+  Or you can also send an issue via github to me at: [Git](github.com/${answers.github}/)
 
   `;
 
