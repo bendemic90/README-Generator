@@ -10,22 +10,28 @@ const promptUser = () => {
     {
       type: 'input',
       name: 'name',
-      message: 'What is the name of your repository/app?',
+      message: 'What is the title of your repository/app?',
+    },
+    {
+      type: 'list',
+      name: 'license',
+      message: 'What license do you use?', 
+      choices: ['MIT', 'GNU-GPLv3', 'Apache', 'Personal/Proprietary']
     },
     {
       type: 'input',
-      name: 'location',
-      message: 'Where are you from?', 
+      name: 'email',
+      message: 'What is your email?',
     },
     {
       type: 'input',
-      name: 'hobby',
-      message: 'What is your favorite hobby?',
+      name: 'usage',
+      message: 'What is your app used for?',
     },
     {
       type: 'input',
-      name: 'food',
-      message: 'What is your favorite food?',
+      name: 'installation',
+      message: 'Please outline how to install your application!',
     },
     {
       type: 'input',
@@ -41,14 +47,28 @@ const promptUser = () => {
 };
 
 const generateReadme = (answers) =>
-  `# ${answers.name}
+  `
+  # ${answers.name}
+  ### Licence: ![${answers.licence}](https://img.shields.io/static/v1?label=${answers.licence}&message=License)
+  ## Table of Contents:
+  [Description](#${answers.name})
+  [Usage](#${answers.usage})
+  [Installation](#${answers.installation})
+  ### Description
+  ${answers.usage}
+  ### Usage
+
+  ### Contact/FAQ
+  Please contact me at ${answers.email} if you have any questions regarding the application!
+  Further professional contact at ${answers.linkedin}.
+
   `;
 
 // Bonus using writeFileAsync as a promise
 const init = () => {
   promptUser()
-    .then((answers) => writeFileAsync('READ_ME.md', generateReadme(answers)))
-    .then(() => console.log('Successfully wrote to READ_ME.md'))
+    .then((answers) => writeFileAsync(`${answers.name}.md`, generateReadme(answers)))
+    .then(() => console.log('Writing successful.'))
     .catch((err) => console.error(err));
 };
 
