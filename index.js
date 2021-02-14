@@ -47,16 +47,24 @@ const promptUser = () => {
 };
 
 const generateReadme = (answers) =>
-  `
+  ` 
   # ${answers.name}
-  ### Licence: ![${answers.licence}](https://img.shields.io/static/v1?label=${answers.licence}&message=License)
+
+  ### License: ![License](https://img.shields.io/static/v1?label=${answers.license}&message=License)
+
   ## Table of Contents:
-  [Description](#${answers.name})
-  [Usage](#${answers.usage})
-  [Installation](#${answers.installation})
+  1. [Description](###description)
+  2. [Usage](###usage)
+  3. [Installation](###installation)
+
   ### Description
   ${answers.usage}
-  ### Usage
+
+  ### Usage 
+  ${answers.usage}
+
+  ### Installation
+  ${answers.installation}
 
   ### Contact/FAQ
   Please contact me at ${answers.email} if you have any questions regarding the application!
