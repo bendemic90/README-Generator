@@ -50,7 +50,7 @@ const promptUser = () => {
     },
     {
       type: 'input',
-      name: 'test',
+      name: 'tests',
       message: 'How does one test your application?',
     },
   ]);
@@ -81,11 +81,11 @@ const generateReadme = (answers) =>
 
   ### Questions
   - Please contact me at ${answers.email} if you have any questions regarding the application!
-  - Further professional contact at my LinkedIN: [Linked](https://www.linkedin.com/in/${answers.linkedin}/)
-  - Github: [Git](github.com/${answers.github}/)
+  - Further professional contact at my LinkedIN: [LinkedIn](https://www.linkedin.com/in/${answers.linkedin}/)
+  - Github: [${answers.github}](github.com/${answers.github}/)
 
   ### Tests
-  ${answers.test}
+  ${answers.tests}
 
   ### Contributing
   If you wish to contribute to this application please send a request to me at: ${answers.email}.
