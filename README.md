@@ -18,8 +18,8 @@ Enacting a README quickly and efficiently.
 [Repo](https://github.com/bendemic90/README-Generator/)
 
 ## Screengrabs of deployed application
-![Screenshot-One](https://github.com/bendemic90/README-Generator/blob/main/assets/markdown.png)
-![Screenshot-Two](https://github.com/bendemic90/README-Generator/blob/main/assets/node.png)
+![Screenshot-One](assets\markdown.png)
+![Screenshot-Two](assets\node.png)
 
 ## Video of the application in use
-![Video](https://drive.google.com/file/d/1ukhv1wngqu3jHdeVaoP-0e0l2eRX8-ik/view?usp=sharing)
+![Video](assets\assignment_w_9_2.mp4)
